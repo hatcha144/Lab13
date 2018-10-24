@@ -8,8 +8,8 @@ namespace Lab13
 {
     class RoshamboApp
     {
-        public Random r;
-        Validator valid;
+        public Random r = new Random();
+        Validator valid = new Validator();
         public virtual Player Opponent()
         {
             Console.WriteLine("Which opponent would you like to face? Rocky or Rando? (1,2)");
@@ -26,8 +26,6 @@ namespace Lab13
             return new Rocky();
         }
 
-
-
         public void Gameselect(Player playerUser, Player playerEnemy) 
         {
             
@@ -38,7 +36,8 @@ namespace Lab13
             if (check == true)
             {
                 string enemyChoice = playerEnemy.GenRPS();
-                if (input == "r")
+                Console.WriteLine("Enemy chose: " + enemyChoice);
+                if (input == "r")//if user inputs rock
                 {
                     if (enemyChoice == RPS.Rock)
                     {
@@ -46,15 +45,15 @@ namespace Lab13
                     }
                     if (enemyChoice == RPS.Paper)
                     {
-                        Console.WriteLine("You win!");
+                        Console.WriteLine("You lose!");
                     }
 
                     if (enemyChoice == RPS.Scissors)
                     {
-                        Console.WriteLine("You lose!");
+                        Console.WriteLine("You win!");
                     }
                 }
-                if (input == "p")
+                else if (input == "p")//if user inputs paper 
                 {
                     if (enemyChoice == RPS.Paper)
                     {
@@ -62,14 +61,14 @@ namespace Lab13
                     }
                     if (enemyChoice == RPS.Rock)
                     {
-                        Console.WriteLine("You lose!");
+                        Console.WriteLine("You win!");
                     }
                     if (enemyChoice == RPS.Scissors)
                     {
-                        Console.WriteLine("You win!");
+                        Console.WriteLine("You lose!");
                     }
                 }
-                if (input == "s")
+                else if (input == "s")//if user inputs scissors 
                 {
                     if (enemyChoice == RPS.Scissors)
                     {
@@ -77,61 +76,14 @@ namespace Lab13
                     }
                     if (enemyChoice == RPS.Rock)
                     {
-                        Console.WriteLine("You win!");
+                        Console.WriteLine("You lose!");
                     }
                     if (enemyChoice == RPS.Paper)
                     {
-                        Console.WriteLine("You lose!");
+                        Console.WriteLine("You win!");
                     }
                     string userChoice = playerUser.GenRPS();
-                    if (input == "r")
-                    {
-                        if (enemyChoice == RPS.Rock)
-                        {
-                            Console.WriteLine("Tie!");
-                        }
-                        if (enemyChoice == RPS.Paper)
-                        {
-                            Console.WriteLine("You win!");
-                        }
-
-                        if (enemyChoice == RPS.Scissors)
-                        {
-                            Console.WriteLine("You lose!");
-                        }
-                    }
-                    if (input == "p")
-                    {
-                        if (enemyChoice == RPS.Paper)
-                        {
-                            Console.WriteLine("Tie!");
-                        }
-                        if (enemyChoice == RPS.Rock)
-                        {
-                            Console.WriteLine("You lose!");
-                        }
-                        if (enemyChoice == RPS.Scissors)
-                        {
-                            Console.WriteLine("You win!");
-                        }
-
-                    }
-                    if (input == "s")
-                    {
-                        if (enemyChoice == RPS.Scissors)
-                        {
-                            Console.WriteLine("Tie!");
-                        }
-                        if (enemyChoice == RPS.Rock)
-                        {
-                            Console.WriteLine("You win!");
-                        }
-                        if (enemyChoice == RPS.Paper)
-                        {
-                            Console.WriteLine("You lose!");
-                        }
-
-                    }
+                    
                 }
 
                 else

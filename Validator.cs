@@ -8,6 +8,10 @@ namespace Lab13
 {
     class Validator
     {
+        public Validator()
+        {
+
+        }
         public bool inRange(int check , int max, int min)
         {
             if (check > min && check < max)

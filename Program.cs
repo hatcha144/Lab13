@@ -10,17 +10,23 @@ namespace Lab13
     {
         static void Main(string[] args)
         {
-            RoshamboApp rps = new RoshamboApp();
-           
-            Console.WriteLine("Welcome to Rock, Paper,Scissors!");
-            Console.ReadLine();
-            var Opponent = rps.Opponent();
 
-            
-               
-            
-            
-            Console.ReadLine();
+            RoshamboApp rps = new RoshamboApp();
+            User u = new User();
+            string restart;
+
+            do
+            {
+                Console.WriteLine("Welcome to Rock, Paper,Scissors!");
+                Console.ReadLine();
+                Player Opponent = rps.Opponent();
+
+                rps.Gameselect(u, Opponent);
+                Console.WriteLine("Do you wish to continue? (Y or N");
+                restart = Console.ReadLine();
+
+                
+            }while(restart.ToLower() == "y") ;
 
         }   
     }
